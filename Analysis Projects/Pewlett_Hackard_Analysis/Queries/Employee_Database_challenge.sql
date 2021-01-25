@@ -36,7 +36,7 @@ SELECT DISTINCT ON (emp_no) e.emp_no,
 	de.from_date,
 	de.to_date,
 	ti.title
--- INTO mentorship_eligibilty
+INTO mentorship_eligibilty
 FROM employees AS e
 INNER JOIN dept_emp AS de
 ON (e.emp_no = de.emp_no)
@@ -45,3 +45,5 @@ ON (de.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 	AND (de.to_date = '9999-01-01')
 ORDER BY emp_no, to_date DESC;
+
+SELECT * from titles
